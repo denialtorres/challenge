@@ -1,0 +1,27 @@
+.container
+    
+    
+
+    =form_tag action: :message_function do
+        %fieldset
+            .field
+                =label_tag :body, "Introduce una cadena"
+                .control
+                    =text_field_tag :body
+                    
+            .actions
+                =submit_tag "Send"
+                
+    %pre=session[:body]
+
+    =form_tag action: :message_shit do
+        %fieldset
+            .field
+                =label_tag :body_two, "Introduce una cadena"
+                .control
+                    =text_field_tag :body_two
+                    
+            .actions
+                =submit_tag "Send"
+                
+    %pre=session[:body_two]
