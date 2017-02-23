@@ -1,37 +1,12 @@
-class TextStringsController < ApplicationController
-    
-    def message_function
-        session[:body] = palindrome_verify(params[:body])
-        redirect_to root_url
-    end
-    
-    def message_shit
-        @string = params[:body_two]
-        session[:body_two] = valid_string?(@string)
-        redirect_to root_url
-    end
-    
-    def index
-        
-    end
-
-private
-    #Primer Reto que verifica si una palabra es un palindromo
-    def palindrome_verify(word)
-        if word.reverse == word #Check if string same when reversed 
-            return "#{ word } es palindromo."
-          else # If string is not the same when reversed
-            return "#{ word } no es un palindromo"
-        end
-    end
-    
-    
-    #Segundo reto que es verificar si los brackets cierran
-    def valid_string?(string)
+ def valid_string?(string)
+     puts "Estas en funcion"
     if string.match(/[a-z]/).present? || string.match(/[0-9]/).present?
         @valid = false
         return "No pongas otro caracter que no sean llaves, corchetes o parentesis"
     else
+        
+        puts "No Pusiste Letras"
+    
        #assume validity
       @valid = true
       #empty array will be populated inside the loop
@@ -51,6 +26,6 @@ private
       @valid &= @open_characters.empty?
       return @valid
     end 
-    end
 end
 
+ valid_string?('hola')

@@ -1,6 +1,18 @@
 .container
-    
-    
+    %h1 Reto cambio de variables
+    %h2 Tengo a = 10, b= 77
+    %h3
+    a = a + b --> 
+    %span{:style => "color:red"} a = 87
+    %h3
+    b = a - b -->
+    %span{:style => "color:green"} b = 10 (el valor original de a)
+    %h3
+    a = a - b -->
+    %span{:style => "color:blue"} a = 77 (el valor original de b)
+.container
+    %h1 Reto de Palindromo
+
 
     =form_tag action: :message_function do
         %fieldset
@@ -13,11 +25,13 @@
                 =submit_tag "Send"
                 
     %pre=session[:body]
-
+    
+    %h1 Reto de Brakets
+    
     =form_tag action: :message_shit do
         %fieldset
             .field
-                =label_tag :body_two, "Introduce una cadena"
+                =label_tag :body_two, "Introduce una secuencia de parentesis, corchetes o llaves"
                 .control
                     =text_field_tag :body_two
                     
